@@ -1,0 +1,8 @@
+version: '3.8'              # declares the version of compose file
+
+services:
+  app:                      # name of the service - arbitrary
+    image: fs-todo-backend   # image to use for service
+    build: .
+    ports: 
+      - 3000:3000

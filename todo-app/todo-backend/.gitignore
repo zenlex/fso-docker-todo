@@ -59,3 +59,9 @@ typings/
 
 # next.js build output
 .next
+
+# local dev rest client requests
+requests
+
+#redis dev store
+redis_data
