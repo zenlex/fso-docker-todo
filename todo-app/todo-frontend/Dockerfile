@@ -4,7 +4,7 @@ WORKDIR /usr/app/src
 
 COPY --chown=node:node . .
 
-RUN npm install
+RUN npm ci
 
 ENV REACT_APP_BACKEND_URL=http://localhost:3000
 
