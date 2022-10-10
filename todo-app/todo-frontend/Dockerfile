@@ -12,6 +12,12 @@ USER node
 
 RUN npm run build
 
+FROM build-stage as test-stage
+
+COPY --from=build-stage . .
+
+RUN CI=true npm test
+
 FROM nginx
 
-COPY --from=build-stage /usr/app/src/build /usr/share/nginx/html
+COPY --from=test-stage /usr/app/src/build /usr/share/nginx/html
